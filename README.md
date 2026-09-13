@@ -23,6 +23,12 @@ The system was developed as part of ongoing research into improving protein func
 
 ---
 
+> **Note on scope.** This is a team project. `evaluation_weighted.py` is inherited lab
+> code (header: `@author wangsj`, 2022) and predates the programme. `net_knn.py` and
+> `run.py` import a `network` module that belongs to the host lab's tree and is not
+> included, so those two paths will not execute from this repository alone; the naive
+> and BLAST-KNN paths are self-contained.
+
 ## Team
 
 This project was a collaborative effort with PhD researchers:
@@ -120,10 +126,17 @@ All methods integrate with the GO hierarchy:
 ### ESM-2 Embeddings (Experimental)
 
 The `notebooks/` directory contains experiments with **ESM-2** (Evolutionary Scale Modeling), a protein language model from Meta AI Research:
-- 650M parameter transformer model
-- Generates dense sequence embeddings (320-dim)
-- Used as input features for neural network classifiers
-- Explores deep learning alternatives to homology-based methods
+Two ESM-2 variants are used, and they are not interchangeable:
+
+- `esm2_t33_650M_UR50D` - 650M parameters, **1280-dim** embeddings. Used for
+  per-residue representation extraction and unsupervised contact-map analysis.
+- `esm2_t6_8M_UR50D` - 8M parameters, **320-dim** embeddings. Used for the
+  lightweight classification-head prototype in `notebooks/`.
+
+The notebooks here are local exploration only: the classification head is sketched
+but not trained (the dataset cell is a placeholder). The full DNN-over-ESM-2 arm of
+the project was run by the host lab on their cluster against the complete UniProt
+set, and those results are not redistributed here.
 
 ---
 
@@ -208,6 +221,7 @@ The `notebooks/` directory contains experiments with **ESM-2** (Evolutionary Sca
 | **Gene Ontology** | `go-basic.obo` hierarchy file | [Gene Ontology Downloads](http://geneontology.org/docs/download-ontology/) |
 | **NCBI BLAST+** | Sequence alignment tools | [NCBI FTP](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/) |
 | **Training Data** | Protein sequences with GO annotations | CAFA challenge data |
+| **`network.py`** | PPI network loader, required by `net_knn.py` and `run.py` | Host lab internal code, not redistributed |
 | **PPI Network** | Protein-protein interaction network | CAFA5 v11.5 |
 | **ESM-2 Models** | Protein language model weights | [Facebook Research ESM](https://github.com/facebookresearch/esm) |
 
