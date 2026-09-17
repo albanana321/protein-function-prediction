@@ -12,12 +12,12 @@ A computational bioinformatics pipeline for predicting protein functions using a
 
 ## Overview
 
-Protein function prediction (PFP) is a fundamental challenge in computational biology. Given a protein sequence, the goal is to predict its biological functions using the **Gene Ontology (GO)** — a standardised vocabulary describing molecular functions, biological processes, and cellular components.
+Protein function prediction (PFP) is a fundamental challenge in computational biology. Given a protein sequence, the goal is to predict its biological functions using the **Gene Ontology (GO)**, a standardised vocabulary describing molecular functions, biological processes, and cellular components.
 
 This project implements a multi-method ensemble approach that combines:
-1. **Naive baseline** — Frequency-based prediction using training set statistics
-2. **BLAST-KNN** — K-nearest neighbours using sequence homology via PSI-BLAST
-3. **Network-KNN** — K-nearest neighbours using protein-protein interaction networks
+1. **Naive baseline**: frequency-based prediction using training set statistics
+2. **BLAST-KNN**: K-nearest neighbours using sequence homology via PSI-BLAST
+3. **Network-KNN**: K-nearest neighbours using protein-protein interaction networks
 
 The system was developed as part of ongoing research into improving protein function annotation, with applications to the **Critical Assessment of Functional Annotation (CAFA)** challenge.
 
@@ -241,16 +241,16 @@ set, and those results are not redistributed here.
 
 ## Acknowledgements
 
-- **Fudan University** — GripS Research Program
-- **Zhejiang University** — Collaborative research and poster presentation venue
-- **Meta AI Research** — ESM protein language models
-- **CAFA Organisers** — Benchmark data and evaluation framework
+- **Fudan University**: GripS Research Program
+- **Zhejiang University**: collaborative research and poster presentation venue
+- **Meta AI Research**: ESM protein language models
+- **CAFA Organisers**: benchmark data and evaluation framework
 
 ---
 
 ## License
 
-This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
